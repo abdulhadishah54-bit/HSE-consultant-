@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX SafeGuard Consulting | HSE Consultancy — Saudi Arabia</title>
+<meta name="description" content="NEOM-proven, SABIC-awarded HSE consultancy in Saudi Arabia. ISO 45001, Zero LTI, CSP-certified leadership for KSA and GCC projects.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1F3A;
+    --gold: #E8A020;
+    --teal: #0F7B6C;
+    --white: #F4F6F8;
+    --light-gray: #E8ECF0;
+    --mid-gray: #C2C8D0;
+    --dark-text: #0B1F3A;
+    --body-text: #3A4A5A;
+    --font-display: 'Bebas Neue', 'Impact', sans-serif;
+    --font-body: 'Outfit', 'Segoe UI', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--dark-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     NAVBAR
+  ============================================================ */
+  nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo-svg { width: 42px; height: 42px; flex-shrink: 0; }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 23px; letter-spacing: 2.5px;
+    color: var(--white); line-height: 1;
+  }
+  .nav-brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a {
+    color: rgba(244,246,248,0.72);
+    font-size: 12.5px; font-weight: 500;
+    letter-spacing: 0.8px; text-decoration: none;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 10px 24px; border-radius: 4px;
+    font-size: 12.5px; font-weight: 700; letter-spacing: 0.8px;
+    text-transform: uppercase; cursor: pointer; border: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ============================================================
+     HERO
+  ============================================================ */
+  .hero {
+    background: var(--navy);
+    position: relative; overflow: hidden;
+    padding: 96px 48px 88px;
+    display: flex; align-items: center;
+    gap: 64px; flex-wrap: wrap;
+    min-height: 88vh;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(15,123,108,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,123,108,0.10) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .hero-glow {
+    position: absolute; right: -100px; top: -100px;
+    width: 560px; height: 560px; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(232,160,32,0.10) 0%, transparent 68%);
+  }
+  .hero-glow2 {
+    position: absolute; left: -60px; bottom: -80px;
+    width: 360px; height: 360px; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(15,123,108,0.10) 0%, transparent 68%);
+  }
+  .hero-text { position: relative; flex: 1; min-width: 300px; max-width: 600px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,160,32,0.14); border: 1px solid rgba(232,160,32,0.38);
+    color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 1.8px;
+    text-transform: uppercase; padding: 7px 16px; border-radius: 24px; margin-bottom: 28px;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(54px, 7.5vw, 88px);
+    line-height: 0.90; letter-spacing: 2px;
+    color: var(--white); margin-bottom: 28px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; display: block; }
+  .hero-sub {
+    font-size: 17px; font-weight: 300; line-height: 1.75;
+    color: rgba(244,246,248,0.70); margin-bottom: 40px;
+    max-width: 460px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 15px 34px; border-radius: 4px;
+    font-weight: 700; font-size: 14px; letter-spacing: 0.6px;
+    text-transform: uppercase; cursor: pointer; border: none;
+    text-decoration: none; display: inline-block;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,160,32,0.38); }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    padding: 15px 34px; border-radius: 4px;
+    font-weight: 600; font-size: 14px; letter-spacing: 0.6px;
+    text-transform: uppercase; cursor: pointer;
+    border: 1.5px solid rgba(244,246,248,0.30);
+    text-decoration: none; display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Logo Card */
+  .hero-logo-wrap {
+    position: relative; flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 0;
+  }
+  .hero-logo-card {
+    background: rgba(244,246,248,0.05);
+    border: 1px solid rgba(244,246,248,0.13);
+    border-radius: 18px; padding: 40px 44px 32px;
+    text-align: center; backdrop-filter: blur(10px);
+  }
+  .logo-firm-name {
+    font-family: var(--font-display);
+    font-size: 30px; letter-spacing: 4px;
+    color: var(--white); display: block; margin-top: 18px;
+  }
+  .logo-tagline {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); display: block; margin-top: 6px;
+  }
+
+  /* ============================================================
+     STATS BAR
+  ============================================================ */
+  .stats-bar {
+    background: var(--teal); padding: 26px 48px;
+    display: flex; justify-content: space-around;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .stat { text-align: center; color: white; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 40px; letter-spacing: 1px; color: white;
+    display: block; line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 11.5px; font-weight: 500;
+    letter-spacing: 0.8px; opacity: 0.80;
+    text-transform: uppercase; margin-top: 4px;
+    display: block;
+  }
+
+  /* ============================================================
+     SHARED SECTION STYLES
+  ============================================================ */
+  section { padding: 80px 48px; }
+  .section-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 54px);
+    letter-spacing: 1.5px; line-height: 0.95;
+    color: var(--navy); margin-bottom: 18px;
+    display: block;
+  }
+  .section-sub {
+    font-size: 16.5px; font-weight: 300; line-height: 1.75;
+    color: var(--body-text); max-width: 540px;
+    display: block;
+  }
+  hr.divider { border: none; border-top: 1.5px solid var(--light-gray); }
+
+  /* ============================================================
+     SERVICES
+  ============================================================ */
+  #services { background: #fff; }
+  .services-header { margin-bottom: 52px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+    gap: 22px;
+  }
+  .service-card {
+    background: var(--white); border: 1.5px solid var(--light-gray);
+    border-radius: 12px; padding: 30px 26px;
+    transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+    cursor: default;
+  }
+  .service-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 10px 32px rgba(15,123,108,0.12);
+    transform: translateY(-4px);
+  }
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px; font-size: 22px;
+  }
+  .icon-navy { background: rgba(11,31,58,0.08); }
+  .icon-gold  { background: rgba(232,160,32,0.13); }
+  .icon-teal  { background: rgba(15,123,108,0.10); }
+  .service-card h3 {
+    font-size: 15px; font-weight: 700; color: var(--navy);
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .service-card p {
+    font-size: 13.5px; font-weight: 300;
+    line-height: 1.65; color: var(--body-text);
+  }
+
+  /* ============================================================
+     ABOUT (DARK)
+  ============================================================ */
+  #about {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .about-inner {
+    display: flex; gap: 64px;
+    align-items: flex-start; flex-wrap: wrap;
+  }
+  .about-text { flex: 1; min-width: 280px; }
+  #about .section-tag { color: var(--gold); }
+  #about .section-title { color: var(--white); }
+  #about .section-sub {
+    color: rgba(244,246,248,0.68);
+    margin-bottom: 32px;
+  }
+  .creds { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .cred-badge {
+    background: rgba(232,160,32,0.12);
+    border: 1px solid rgba(232,160,32,0.32);
+    color: var(--gold); font-size: 11px; font-weight: 600;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 24px;
+  }
+  .about-cards {
+    display: flex; flex-direction: column; gap: 18px;
+    flex: 0 0 300px; min-width: 260px;
+  }
+  .about-card {
+    background: rgba(244,246,248,0.06);
+    border: 1px solid rgba(244,246,248,0.12);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px; padding: 22px 24px;
+  }
+  .about-card-num {
+    font-family: var(--font-display);
+    font-size: 42px; color: var(--gold); line-height: 1;
+    display: block; margin-bottom: 6px;
+  }
+  .about-card p {
+    font-size: 13.5px; font-weight: 300;
+    color: rgba(244,246,248,0.70); line-height: 1.6;
+  }
+
+  /* ============================================================
+     AWARDS
+  ============================================================ */
+  #awards { background: var(--white); }
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 48px;
+  }
+  .award-card {
+    border: 1.5px solid var(--light-gray);
+    border-top: 4px solid var(--gold);
+    border-radius: 10px; padding: 28px 24px;
+    background: white;
+  }
+  .award-emoji { font-size: 36px; display: block; margin-bottom: 14px; }
+  .award-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .award-card p { font-size: 13.5px; font-weight: 300; line-height: 1.6; color: var(--body-text); }
+
+  /* ============================================================
+     WHY APEX
+  ============================================================ */
+  #why { background: var(--light-gray); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
+    gap: 28px; margin-top: 52px;
+  }
+  .why-card { text-align: center; padding: 36px 22px; }
+  .why-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), #0A5A4E);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 26px;
+    box-shadow: 0 4px 18px rgba(15,123,108,0.22);
+  }
+  .why-card h3 {
+    font-size: 15.5px; font-weight: 700;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .why-card p {
+    font-size: 13.5px; font-weight: 300;
+    line-height: 1.68; color: var(--body-text);
+  }
+
+  /* ============================================================
+     SECTORS
+  ============================================================ */
+  #sectors { background: #fff; }
+  .sectors-grid {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin-top: 40px;
+  }
+  .sector-pill {
+    background: rgba(11,31,58,0.06);
+    border: 1.5px solid rgba(11,31,58,0.15);
+    color: var(--navy); font-size: 13.5px; font-weight: 600;
+    letter-spacing: 0.4px; padding: 10px 22px;
+    border-radius: 32px; transition: background 0.2s, border-color 0.2s, color 0.2s;
+    cursor: default;
+  }
+  .sector-pill:hover {
+    background: var(--navy); color: var(--white);
+    border-color: var(--navy);
+  }
+
+  /* ============================================================
+     CONTACT
+  ============================================================ */
+  #contact { background: var(--white); }
+  .contact-inner {
+    display: flex; gap: 64px;
+    flex-wrap: wrap; align-items: flex-start;
+  }
+  .contact-text { flex: 1; min-width: 260px; }
+  .contact-info { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .contact-row {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 14.5px; color: var(--body-text);
+  }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .ci-navy { background: var(--navy); color: white; }
+  .ci-teal { background: var(--teal); color: white; }
+  .ci-gold { background: var(--gold); color: var(--navy); }
+
+  .contact-form {
+    flex: 1; min-width: 300px;
+    background: white; border: 1.5px solid var(--light-gray);
+    border-radius: 14px; padding: 36px;
+  }
+  .contact-form h3 {
+    font-size: 20px; font-weight: 700;
+    color: var(--navy); margin-bottom: 24px;
+  }
+  .form-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .form-group { flex: 1; min-width: 120px; margin-bottom: 16px; }
+  .form-group label {
+    display: block; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.8px; text-transform: uppercase;
+    color: #667788; margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 12px 15px;
+    border: 1.5px solid var(--light-gray);
+    border-radius: 7px; font-family: var(--font-body);
+    font-size: 14px; color: var(--navy);
+    background: var(--white); outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--teal); }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .btn-submit {
+    width: 100%; background: var(--navy); color: var(--white);
+    padding: 15px; border: none; border-radius: 7px;
+    font-family: var(--font-body); font-size: 14.5px;
+    font-weight: 700; letter-spacing: 0.8px;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 4px;
+  }
+  .btn-submit:hover { background: var(--teal); transform: translateY(-1px); }
+
+  /* ============================================================
+     FOOTER
+  ============================================================ */
+  footer {
+    background: #07142A; padding: 40px 48px;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 20px;
+  }
+  .footer-brand {
+    font-family: var(--font-display);
+    font-size: 22px; letter-spacing: 3px; color: var(--white);
+  }
+  .footer-brand span { color: var(--gold); }
+  .footer-copy {
+    font-size: 12px; color: rgba(244,246,248,0.38);
+    margin-top: 5px;
+  }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a {
+    font-size: 12.5px; color: rgba(244,246,248,0.50);
+    text-decoration: none; letter-spacing: 0.4px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 60px 20px 56px; gap: 40px; }
+    section { padding: 56px 20px; }
+    .stats-bar { padding: 20px; }
+    footer { padding: 32px 20px; }
+    .contact-form { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="0 0 42 42" fill="none">
+      <circle cx="21" cy="21" r="20" fill="#0F7B6C"/>
+      <circle cx="21" cy="21" r="20" fill="none" stroke="#E8A020" stroke-width="1.5"/>
+      <path d="M21 4L33 10L33 23Q33 33 21 38Q9 33 9 23L9 10Z" fill="#0B1F3A"/>
+      <path d="M21 4L33 10L33 23Q33 33 21 38Q9 33 9 23L9 10Z" fill="none" stroke="#E8A020" stroke-width="1.2"/>
+      <text x="21" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="700" fill="#F4F6F8">A</text>
+      <circle cx="21" cy="4" r="2.5" fill="#E8A020"/>
+    </svg>
+    <span class="nav-brand">APEX <span>SAFE</span>GUARD</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Consultation</button>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-text">
+    <div class="hero-tag">Vision 2030 Aligned · KSA &amp; GCC</div>
+    <h1>ENGINEERING <em>SAFETY.</em> PROTECTING PEOPLE.</h1>
+    <p class="hero-sub">NEOM-proven, SABIC-awarded HSE leadership — delivering ISO 45001-aligned safety management systems, sustained Zero-LTI performance, and world-class HSE consulting across Saudi Arabia and the GCC.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#contact" class="btn-outline">Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- 4-COLOR LOGO SHOWCASE -->
+  <div class="hero-logo-wrap">
+    <div class="hero-logo-card">
+      <svg width="200" height="200" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 4 COLORS: Navy + Teal + Gold + White -->
+        <!-- Navy outer ring -->
+        <circle cx="200" cy="200" r="192" fill="#0B1F3A"/>
+        <!-- Teal border ring -->
+        <circle cx="200" cy="200" r="192" fill="none" stroke="#0F7B6C" stroke-width="14"/>
+        <!-- Gold dashed inner ring -->
+        <circle cx="200" cy="200" r="170" fill="none" stroke="#E8A020" stroke-width="3.5" stroke-dasharray="9 7"/>
+        <!-- Teal shield body -->
+        <path d="M200 56 L288 100 L288 218 Q288 310 200 350 Q112 310 112 218 L112 100 Z" fill="#0F7B6C"/>
+        <!-- Gold shield border -->
+        <path d="M200 56 L288 100 L288 218 Q288 310 200 350 Q112 310 112 218 L112 100 Z" fill="none" stroke="#E8A020" stroke-width="6"/>
+        <!-- White semi-transparent inner tint -->
+        <path d="M200 74 L272 112 L272 214 Q272 296 200 332 Q128 296 128 214 L128 112 Z" fill="rgba(244,246,248,0.07)"/>
+        <!-- White letter A -->
+        <text x="200" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="155" font-weight="700" fill="#F4F6F8" letter-spacing="3">A</text>
+        <!-- Gold peak gem -->
+        <circle cx="200" cy="56" r="12" fill="#E8A020"/>
+        <circle cx="200" cy="56" r="6" fill="#F4F6F8"/>
+        <!-- Gold corner accent gems -->
+        <circle cx="288" cy="100" r="8" fill="#E8A020"/>
+        <circle cx="112" cy="100" r="8" fill="#E8A020"/>
+        <!-- Gold bottom banner -->
+        <rect x="58" y="340" width="284" height="38" rx="7" fill="#E8A020"/>
+        <text x="200" y="365" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="700" fill="#0B1F3A" letter-spacing="7">CONSULTING</text>
+      </svg>
+      <span class="logo-firm-name">APEX SAFEGUARD</span>
+      <span class="logo-tagline">HSE Consultancy — Saudi Arabia</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS BAR
+============================================================ -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">8+</span>
+    <span class="stat-lbl">Years HSE Experience</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">0 LTI</span>
+    <span class="stat-lbl">Zero Lost Time Injuries</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">1,500+</span>
+    <span class="stat-lbl">Workforce Managed</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">1,000+</span>
+    <span class="stat-lbl">Risk Assessments Done</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">5+</span>
+    <span class="stat-lbl">Global Certifications</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services">
+  <div class="services-header">
+    <span class="section-tag">What We Offer</span>
+    <span class="section-title">CORE HSE SERVICES</span>
+    <span class="section-sub">End-to-end safety management solutions for construction, petrochemical, industrial, and facilities management sectors across Saudi Arabia and the GCC.</span>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon icon-teal">🛡️</div>
+      <h3>HSE Management Systems</h3>
+      <p>ISO 45001-aligned safety systems designed and implemented from ground up — covering policies, procedures, SOPs, and comprehensive audit frameworks tailored to your operations.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-navy">⚗️</div>
+      <h3>Process Safety Management</h3>
+      <p>PSM programs for petrochemical and industrial facilities including hazard identification, HAZOP support, confined space management, and high-risk operation oversight.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-gold">📋</div>
+      <h3>Contractor Safety Management</h3>
+      <p>Multi-contractor HSE oversight covering Permit to Work compliance, RAMS approval, JHA verification, contractor authorization, and daily safety supervision.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-teal">🔍</div>
+      <h3>HSE Audits &amp; Inspections</h3>
+      <p>Comprehensive compliance gap analysis against ISO 45001 and KSA regulatory requirements — with corrective action planning, tracking, and close-out verification.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-navy">🔬</div>
+      <h3>Incident Investigation &amp; RCA</h3>
+      <p>Formal Root Cause Analysis using 5-Why and Fishbone methodologies — delivering systemic corrective controls to eliminate recurrence across all sites.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-gold">🚨</div>
+      <h3>Emergency Response Planning</h3>
+      <p>ERP and BCP development tailored to site-specific hazards — including emergency drills, muster procedures, business continuity, and regulatory reporting.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-teal">📈</div>
+      <h3>KPI &amp; Leading Indicators</h3>
+      <p>TRIR/LTIFR monitoring dashboards, near-miss frequency tracking, PTW compliance rates, and safety audit scoring — with executive-level performance reports.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-navy">🎓</div>
+      <h3>Safety Training Programs</h3>
+      <p>Behavior Based Safety programs, toolbox talks, pre-task briefings, and HSE leadership coaching designed for multicultural, multinational workforces.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-gold">🌿</div>
+      <h3>Environmental Compliance</h3>
+      <p>ISO 14001 environmental management systems — waste management oversight, environmental auditing, and regulatory compliance reporting for KSA operations.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <span class="section-tag">About the Firm</span>
+      <span class="section-title">NEOM-PROVEN. SABIC-AWARDED.</span>
+      <p class="section-sub">Founded by Abdul Hady Shah — Certified Safety Professional (CSP), NEBOSH IGC holder, and Saudi Engineering Council member — APEX SafeGuard brings 8+ years of elite HSE leadership from NEOM Trojena, SABIC petrochemical complexes (Petrokemya, Hadeed, SAFCO, SAMAC), and large-scale manufacturing operations managing 1,500+ person workforces.</p>
+      <p class="section-sub" style="margin-top:16px;">We engineer safety cultures that sustain Zero Lost Time Injury performance — a critical KPI for NEOM, SABIC, and Vision 2030 projects.</p>
+      <div class="creds">
+        <span class="cred-badge">CSP — BCSP USA</span>
+        <span class="cred-badge">NEBOSH IGC</span>
+        <span class="cred-badge">ISO 45001</span>
+        <span class="cred-badge">ISO 14001</span>
+        <span class="cred-badge">Saudi Eng. Council</span>
+        <span class="cred-badge">OSHA 30-Hour</span>
+        <span class="cred-badge">Level 6 Diploma (Qualifi UK)</span>
+        <span class="cred-badge">TSP — BCSP</span>
+        <span class="cred-badge">Vision 2030 Aligned</span>
+      </div>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <span class="about-card-num">🥇</span>
+        <p>Golden Safety Helmet Award — SABIC's highest contractor-level safety recognition for exceptional HSE leadership during high-hazard petrochemical turnaround operations.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-card-num">0 LTI</span>
+        <p>Sustained Zero Lost Time Injury record across all managed facilities and operations — a critical NEOM contract KPI delivered consistently.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-card-num">NEOM</span>
+        <p>Current HSE Lead at NEOM Trojena — one of Saudi Arabia's most prestigious and complex giga-project developments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AWARDS
+============================================================ -->
+<section id="awards">
+  <span class="section-tag">Recognition</span>
+  <span class="section-title">KEY ACHIEVEMENTS</span>
+  <span class="section-sub">A record built on sustained excellence, award-winning performance, and measurable results across KSA's most demanding projects.</span>
+  <div class="awards-grid">
+    <div class="award-card">
+      <span class="award-emoji">🏆</span>
+      <h3>Golden Safety Helmet — SABIC</h3>
+      <p>SABIC's highest contractor-level safety award. Awarded for exceptional HSE leadership and contractor safety management during high-hazard petrochemical turnaround campaigns at Jubail industrial city.</p>
+    </div>
+    <div class="award-card">
+      <span class="award-emoji">🎖️</span>
+      <h3>Appreciation Certificate — SABIC</h3>
+      <p>Awarded for outstanding commitment and contribution to safety performance during SMA-C activities at Petrokemya North and SADAF Plants — recognising sustained excellence in field operations.</p>
+    </div>
+    <div class="award-card">
+      <span class="award-emoji">🔥</span>
+      <h3>Large-Scale Fire Safety Program</h3>
+      <p>Completed 1,000+ Fire Risk Assessments and executed 700 fire safety system installations across commercial, residential, healthcare, and fuel station facilities within a strict 24-month timeline.</p>
+    </div>
+    <div class="award-card">
+      <span class="award-emoji">👷</span>
+      <h3>1,500+ Workforce Governance</h3>
+      <p>Directed complete HSE strategy for a 1,500+ workforce PSF manufacturing site — establishing the site's first structured HSE documentation system from ground up, including SOPs, PTW, and ERP.</p>
+    </div>
+    <div class="award-card">
+      <span class="award-emoji">📊</span>
+      <h3>Zero LTI Performance Record</h3>
+      <p>Maintained sustained Zero Lost Time Injury performance across NEOM Trojena facilities, SABIC turnarounds, and manufacturing operations — demonstrating measurable safety culture transformation.</p>
+    </div>
+    <div class="award-card">
+      <span class="award-emoji">🏗️</span>
+      <h3>NEOM Trojena — ISO 45001 System</h3>
+      <p>Designed and implemented full ISO 45001-aligned OHS Management System, ERP, and BCP from ground up across live NEOM Trojena construction, FM, and O&amp;M environments simultaneously.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     WHY APEX
+============================================================ -->
+<section id="why">
+  <span class="section-tag">Why Choose Us</span>
+  <span class="section-title">THE APEX ADVANTAGE</span>
+  <span class="section-sub">What separates APEX SafeGuard from standard HSE consultancies.</span>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">⚙️</div>
+      <h3>Built from Ground Up</h3>
+      <p>We don't adapt templates — we engineer safety systems from scratch, tailored to your site's specific hazards, workforce, regulatory environment, and client KPIs.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌍</div>
+      <h3>Multinational Expertise</h3>
+      <p>Proven track record managing multicultural workforces across KSA, NEOM, and Pakistan — maintaining consistent safety standards across every language and background.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📊</div>
+      <h3>Data-Driven Leadership</h3>
+      <p>KPI dashboards, TRIR/LTIFR monitoring, and executive-level safety performance reports that support strategic risk decisions at board and client level.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏅</div>
+      <h3>Award-Winning Track Record</h3>
+      <p>SABIC Golden Safety Helmet recipient. Proven in NEOM, SABIC, and high-hazard petrochemical turnarounds — not theoretical experience.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✅</div>
+      <h3>Vision 2030 Aligned</h3>
+      <p>All services, certifications, and SEC membership fully aligned with Saudi Engineering Council requirements and Vision 2030 project standards and expectations.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <h3>Client-Facing Leadership</h3>
+      <p>Strong client-facing HSE representation — presenting safety performance to executive leadership, NEOM project owners, and international client stakeholders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTORS
+============================================================ -->
+<section id="sectors">
+  <span class="section-tag">Industries Served</span>
+  <span class="section-title">SECTORS WE SERVE</span>
+  <span class="section-sub">Deep operational experience across KSA's most demanding and regulated industries.</span>
+  <div class="sectors-grid">
+    <div class="sector-pill">⚗️ Petrochemicals</div>
+    <div class="sector-pill">🏗️ NEOM Giga-Projects</div>
+    <div class="sector-pill">🏭 Manufacturing &amp; Industrial</div>
+    <div class="sector-pill">🔧 Facilities Management</div>
+    <div class="sector-pill">🔥 Oil &amp; Gas Shutdowns</div>
+    <div class="sector-pill">🏥 Healthcare Facilities</div>
+    <div class="sector-pill">🏘️ Residential &amp; Commercial</div>
+    <div class="sector-pill">🌱 Waste Management</div>
+    <div class="sector-pill">💧 Utilities &amp; MEP</div>
+    <div class="sector-pill">⚡ ELV &amp; Fire Detection</div>
+    <div class="sector-pill">🌿 Landscaping Operations</div>
+    <div class="sector-pill">⛽ Fuel Stations</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-text">
+      <span class="section-tag">Get in Touch</span>
+      <span class="section-title">START YOUR SAFETY JOURNEY</span>
+      <p class="section-sub">Ready to build a zero-LTI safety culture for your project? Request a free consultation with our lead HSE expert. Based in Tabuk (NEOM Region) — serving clients across KSA and the GCC.</p>
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-icon ci-navy">📧</div>
+          <span>abdulhadishah54@gmail.com</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon ci-teal">📞</div>
+          <span>+966 058 032 1450</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon ci-gold">📍</div>
+          <span>Tabuk, Saudi Arabia (NEOM Region)</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon ci-navy">🏛️</div>
+          <span>Saudi Engineering Council Member</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Free Consultation Request</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company / Project</label>
+        <input type="text" placeholder="Company or project name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@company.com">
+      </div>
+      <div class="form-group">
+        <label>Service Required</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>HSE Management System (ISO 45001)</option>
+          <option>Process Safety Management</option>
+          <option>Contractor Safety Management</option>
+          <option>HSE Audit &amp; Inspection</option>
+          <option>Incident Investigation &amp; RCA</option>
+          <option>Emergency Response Planning</option>
+          <option>KPI &amp; Leading Indicators</option>
+          <option>Safety Training Programs</option>
+          <option>Environmental Compliance (ISO 14001)</option>
+          <option>Other / Multiple Services</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Describe your project, site, workforce size, and HSE requirements..."></textarea>
+      </div>
+      <button class="btn-submit" type="button">Submit Request →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div>
+    <div class="footer-brand">APEX <span>SAFE</span>GUARD</div>
+    <div class="footer-copy">© 2025 APEX SafeGuard Consulting — Tabuk, Saudi Arabia · All Rights Reserved</div>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:abdulhadishah54@gmail.com">Email Us</a>
+  </div>
+</footer>
+
+</body>
+</html>
